@@ -249,28 +249,9 @@ The dataset presented significant class imbalance that posed a substantial chall
 | LSTM            | ~2-3 hours    | ~8GB RAM     | ~20ms/sample   |
 | Log. Regression | ~15-20 min    | ~4GB RAM     | ~5ms/sample    |
 
-### Potential Solutions for Future Work
+### Potential Solutions that would have worked better
 1. **Manual generation of synthetic data** for minority classes that better preserves the characteristics of real offensive content while increasing representation.
 2. **Human-in-the-loop annotation** to create more balanced datasets with diverse examples of offensive content.
 3. **Domain adaptation techniques** to better generalize to different content types and languages.
 4. **Contrastive learning approaches** to better differentiate between offensive and non-offensive content with similar linguistic patterns.
 5. **Hybrid model approach** combining the speed of logistic regression for initial filtering with the accuracy of transformer models for edge cases.
-
-### Practical Implementation Note
-In production environments, this system would benefit from:
-- A moderation queue for high-confidence detections
-- A human review process for edge cases
-- Continuous model updating with new labeled examples
-- Language-specific thresholds for optimal performance across different languages
-- A tiered approach using faster models for initial screening followed by more accurate models for uncertain cases
-
-## Future Work
-- Implement more sophisticated data augmentation techniques for minority classes
-- Explore few-shot learning approaches for rare offensive content types
-- Create language-specific detection models for improved performance
-- Incorporate explainability features to highlight potentially offensive terms/phrases
-- Experiment with other transformer architectures like mT5 or BLOOM for even better multilingual performance
-- Implement ensemble methods combining transformer-based models with traditional approaches
-- Develop a more robust evaluation framework that considers cultural and contextual nuances in offensive content
-- Test performance in real-world deployment scenarios with diverse content streams
-- Investigate online learning approaches for continuous model improvement with user feedback
